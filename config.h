@@ -86,7 +86,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lfcmd[]  = { "st", "lf", NULL };
 static const char *music[]  = { "st", "ncmpcpp", NULL };
-static const char *screenshotcmd[]  = { "flameshot", "gui", NULL };
+static const char *screenshotcmd[]  = { "/home/jadarius/screenshot.sh", NULL };
+static const char *screenshotclipcmd[]  = { "/home/jadarius/screenshot_clip.sh", NULL };
 static const char *lockscreencmd[]  = { "slock", NULL };
 static const char *musictoggle[]  = { "mpc", "toggle", NULL };
 static const char *volumelower[]  = { "/home/jadarius/vol.sh", "-10", NULL };
@@ -109,6 +110,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = musictoggle } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd }},
+	{ MODKEY,	                XK_s,      spawn,          {.v = screenshotclipcmd }},
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockscreencmd }},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = network } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
